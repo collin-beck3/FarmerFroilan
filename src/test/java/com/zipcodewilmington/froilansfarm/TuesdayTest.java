@@ -1,21 +1,28 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.CropRow;
+import com.zipcodewilmington.froilansfarm.EarCorn;
+import com.zipcodewilmington.froilansfarm.Edible;
+import com.zipcodewilmington.froilansfarm.FarmTestBase;
+import com.zipcodewilmington.froilansfarm.Tomato;
+
 public class TuesdayTest extends FarmTestBase {
 
     @Test
     void tractorHarvestsEveryCrop() {
-        for (CropRow<Crop> row : farm.getField().getCropRows()) {
+        for (CropRow row : farm.getField().getCropRows()) {
             row.addCrop(new CornStalk());
         }
 
-        for (CropRow<Crop> row : farm.getField().getCropRows()) {
+        for (CropRow row : farm.getField().getCropRows()) {
             for (Crop crop : row.getCrops()) {
                 tractor.harvest(crop);
             }
         }
 
-        for (CropRow<Crop> row : farm.getField().getCropRows()) {
+        for (CropRow row : farm.getField().getCropRows()) {
             for (Crop crop : row.getCrops()) {
                 assertTrue(crop.hasBeenHarvested());
             }
