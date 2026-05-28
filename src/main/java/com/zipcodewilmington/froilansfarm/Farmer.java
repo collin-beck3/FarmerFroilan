@@ -6,9 +6,11 @@ public class Farmer extends Person implements Rider, Botanist{
     }
 
     @Override
-    public void plant(Crop<?> crop, CropRow row) {}
-    @Override
     public void mount(Rideable rideable) {}
     @Override
     public void dismount(Rideable rideable) {}
+    @Override
+    public void plant(Crop<?> crop, CropRow row) {
+        row.addCrop(crop);
+    }
 }
