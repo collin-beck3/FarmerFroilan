@@ -41,6 +41,11 @@ public class SaturdayTest extends FarmTestBase {
     
     @Test
     void tractorOperateHarvestsEntireFarm() {
+        for (CropRow row : farm.getField().getCropRows()) { 
+            row.addCrop(new CornStalk());
+            row.addCrop(new TomatoPlant());
+            row.addCrop(new LettucePlant());
+            }
         tractor.operate(farm);
         for (CropRow row : farm.getField().getCropRows()) {
             for (Crop<?> crop : row.getCrops()) {
@@ -71,45 +76,38 @@ public class SaturdayTest extends FarmTestBase {
     @Test
     void horseMakesNoise() {
         Horse horse = farm.getStables().get(0).getHorses().get(0);
-
         assertEquals("Neigh", horse.makeNoise());
     }
     
     @Test
     void chickenMakesNoise() {
         Chicken chicken = farm.getChickenCoops().get(0).getChickens().get(0);
-
         assertEquals("cluck", chicken.makeNoise());
     }
     
     @Test
     void tractorMakesNoise() {
-        assertEquals("vroom",
-                tractor.makeNoise());
+        assertEquals("vroom", tractor.makeNoise());
     }
     
     @Test
     void cropDusterMakesNoise() {
-        assertEquals("whooosh",
-                cropDuster.makeNoise());
+        assertEquals("whooosh", cropDuster.makeNoise());
     }
     
     @Test
     void froilanMakesNoise() {
-        assertEquals("Hello, I am Froilan",
-                froilan.makeNoise());
+        assertEquals("Hello, I am Froilan", froilan.makeNoise());
     }
     
     @Test
     void froilandaMakesNoise() {
-        assertEquals("Hello, I am Froilanda",
-                froilanda.makeNoise());
+        assertEquals("Hello, I am Froilanda", froilanda.makeNoise());
     }
 
     @Test
     void pilotCanMountAndDismountHorse() {
         Horse horse = farm.getStables().get(0).getHorses().get(0);
-
         assertDoesNotThrow(() -> {
             froilanda.mount(horse);
             froilanda.dismount(horse);
@@ -125,16 +123,13 @@ public class SaturdayTest extends FarmTestBase {
     @Test
     void chickenStartsUnfertilized() {
         Chicken chicken = farm.getChickenCoops().get(0).getChickens().get(0);
-
         assertFalse(chicken.hasBeenFertilized());
     }
 
     @Test
     void chickenCanBeFertilized() {
         Chicken chicken = farm.getChickenCoops().get(0).getChickens().get(0);
-
         chicken.setHasBeenFertilized(true);
-
         assertTrue(chicken.hasBeenFertilized());
     }
 
