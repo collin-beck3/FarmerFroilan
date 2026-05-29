@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class Chicken extends Animal implements Produce<Edible> {
+    protected boolean hasBeenFertilized = false;
 
     public Chicken(String name, String sound) {
         super(name, sound);
@@ -8,8 +9,19 @@ public class Chicken extends Animal implements Produce<Edible> {
 
     @Override
     public EdibleEgg yield() {
-        return new EdibleEgg();
+        if (!hasBeenFertilized) {
+            return new EdibleEgg();
+        }
+        return null;
     }
     @Override
     public String makeNoise() { return sound; }
+
+    public void hasBeenFertilized() {
+        hasBeenFertilized = true;
+    }
+
+    public void setHasBeenFertilized(boolean hasBeenFertilized) {
+        this.hasBeenFertilized = hasBeenFertilized;
+    }
 }
