@@ -16,8 +16,8 @@ public abstract class FarmTestBase {
     void setUp() {
         farm = new Farm();
 
-        froilan = new Farmer("Froilan", "Hello, my name is Froilan");
-        froilanda = new Pilot("Froilanda", "Hello, my name is Froilanda");
+        froilan = new Farmer("Froilan", "Hello, I am Froilan");
+        froilanda = new Pilot("Froilanda", "Hello, I am Froilanda");
 
         tractor = new Tractor("Tractor", "vroom");
         cropDuster = new CropDuster("CropDuster", "whooosh");

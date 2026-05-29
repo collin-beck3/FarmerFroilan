@@ -24,4 +24,9 @@ public class ThursdayTest extends FarmTestBase {
     void farmerMakesNoise() {
         assertEquals("Hello, I am Froilan", froilan.makeNoise());
     }
+
+    @Test
+    void pilotMakesNoise() {
+        assertEquals("Hello, I am Froilanda", froilanda.makeNoise());
+    }
 }
