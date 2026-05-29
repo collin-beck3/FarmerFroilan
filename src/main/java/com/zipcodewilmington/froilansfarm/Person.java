@@ -2,9 +2,10 @@ package com.zipcodewilmington.froilansfarm;
 
 public abstract class Person implements Eater, NoiseMaker {
     protected String name;
-    public Person(String name) {this.name = name;}
+    protected String sound;
+    public Person(String name, String sound) {this.name = name; this.sound = sound;}
     @Override
     public void eat(Edible edible) {}
     @Override
-    public void makeNoise() {}
+    public String makeNoise() { return sound; }
 }

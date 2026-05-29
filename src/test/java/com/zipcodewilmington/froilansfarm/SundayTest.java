@@ -1,8 +1,8 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.CropRow;
-import com.zipcodewilmington.froilansfarm.Stable;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
 
 

@@ -2,10 +2,11 @@ package com.zipcodewilmington.froilansfarm;
 
 public abstract class Animal implements Eater, NoiseMaker {
     protected String name;
+    protected String sound;
 
-    public Animal(String name) { this.name = name;}
+    public Animal(String name, String sound) { this.name = name; this.sound = sound;}
     @Override
     public void eat(Edible edible) {}
     @Override
-    public void makeNoise() {}
+    public String makeNoise() { return sound; }
 }
