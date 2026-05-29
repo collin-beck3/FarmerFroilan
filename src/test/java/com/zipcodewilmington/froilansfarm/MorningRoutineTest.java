@@ -1,12 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import org.junit.jupiter.api.Test;
 
-public class MorningRoutineTest {
+public class MorningRoutineTest
+        extends FarmTestBase {
 
     @Test
     void testFroilanCanRideEachHorse() {
@@ -69,13 +67,17 @@ public class MorningRoutineTest {
     @Test
     void testEachHorseCanEatThreeEarCorn() {
 
-        Horse horse = new Horse("TestHorse", "Neigh");
+        for (Stable stable : farm.getStables()) {
+            for (Horse horse :
+                    stable.getHorses()) {
 
-        assertDoesNotThrow(() -> {
-            horse.eat(new EarCorn());
-            horse.eat(new EarCorn());
-            horse.eat(new EarCorn());
-        });
+                assertDoesNotThrow(() -> {
+                    horse.eat(new EarCorn());
+                    horse.eat(new EarCorn());
+                    horse.eat(new EarCorn());
+                });
+            }
+        }
     }
 
     @Test
@@ -89,7 +91,8 @@ public class MorningRoutineTest {
             froilan.eat(new Tomato());
 
             for (int i = 0; i < 5; i++) {
-                froilan.eat(new EdibleEgg());
+                froilan.eat(
+                        new EdibleEgg());
             }
         });
     }
@@ -103,8 +106,10 @@ public class MorningRoutineTest {
             froilanda.eat(new EarCorn());
             froilanda.eat(new EarCorn());
             froilanda.eat(new Tomato());
-            froilanda.eat(new EdibleEgg());
-            froilanda.eat(new EdibleEgg());
+            froilanda.eat(
+                    new EdibleEgg());
+            froilanda.eat(
+                    new EdibleEgg());
         });
     }
 }

@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 public abstract class Crop<T extends Edible> implements Produce<T> {
     private boolean hasBeenHarvested;
+    private boolean hasBeenFertilized;
 
     public Crop() {
         hasBeenHarvested = false;
@@ -13,6 +14,10 @@ public abstract class Crop<T extends Edible> implements Produce<T> {
 
     public boolean hasBeenHarvested() {
         return hasBeenHarvested;
+    }
+
+    public boolean hasBeenFertilized() {
+        return hasBeenFertilized;
     }
 
 }

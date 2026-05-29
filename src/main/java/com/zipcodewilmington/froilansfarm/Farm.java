@@ -1,52 +1,56 @@
-package com.zipcodewilmington.froilansfarm;
+    package com.zipcodewilmington.froilansfarm;
 
-import java.util.ArrayList;
-import java.util.List;
+    import java.util.ArrayList;
+    import java.util.List;
 
-public class Farm {
-    private Field field;
-    private FarmHouse farmHouse;
-    private List<FarmVehicle> farmVehicles;
-    private List<ChickenCoop> chickenCoops;
-    private List<Stable> stables;
+    public class Farm {
+        private Field field;
+        private FarmHouse farmHouse;
+        private Vehicle vehicle;
+        private List<FarmVehicle> farmVehicles;
+        private List<ChickenCoop> chickenCoops;
+        private List<Stable> stables;
 
-    public Farm() {
-        field = new Field();
-        farmHouse = new FarmHouse();
+        public Farm() {
+            field = new Field();
+            farmHouse = new FarmHouse();
 
-        farmVehicles = new ArrayList<>();
-        farmVehicles.add(new Tractor("tractor", "vroum"));
-        farmVehicles.add(new CropDuster("CropDuster", "whoossh"));
+            farmVehicles = new ArrayList<>();
 
-        chickenCoops = new ArrayList<>();
-        chickenCoops.add(new ChickenCoop());
-        chickenCoops.add(new ChickenCoop());
-        chickenCoops.add(new ChickenCoop());
-        chickenCoops.add(new ChickenCoop());
+            chickenCoops = new ArrayList<>();
 
-        stables = new ArrayList<>();
-        stables.add(new Stable());
-        stables.add(new Stable());
-        stables.add(new Stable());
+            stables = new ArrayList<>();
+        }
+
+        public void addFarmVehicle(FarmVehicle vehicle) {
+            farmVehicles.add(vehicle);
+        }
+
+        public void addChickenCoop(ChickenCoop coop) {
+            chickenCoops.add(coop);
+        }
+
+        public void addStable(Stable stable) {
+            stables.add(stable);
+        }
+
+        public FarmHouse getFarmHouse() {
+            return farmHouse;
+        }
+
+        public Field getField() {
+            return field;
+        }
+
+        public List<Stable> getStables() {
+            return stables;
+        }
+
+        public List<ChickenCoop> getChickenCoops() {
+            return chickenCoops;
+        }
+
+        public List<FarmVehicle> getFarmVehicles() {
+            return farmVehicles;
+        }
     }
-
-    public FarmHouse getFarmHouse() {
-        return farmHouse;
-    }
-
-    public Field getField() {
-        return field;
-    }
-
-    public List<Stable> getStables() {
-        return stables;
-    }
-
-    public List<ChickenCoop> getChickenCoops() {
-        return chickenCoops;
-    }
-
-    public List<FarmVehicle> getFarmVehicles() {
-        return farmVehicles;
-    }
-}

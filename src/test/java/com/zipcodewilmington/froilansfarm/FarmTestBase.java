@@ -52,7 +52,7 @@ public abstract class FarmTestBase {
 
         for (Stable stable : farm.getStables()) {
             while (stable.getHorses().size() < 4 && horseCount < 10) {
-                stable.add(new Horse("horse", "Neigh"));
+                stable.addHorse(new Horse("horse", "Neigh"));
                 horseCount++;
             }
         }
@@ -63,7 +63,7 @@ public abstract class FarmTestBase {
 
         for (ChickenCoop coop : farm.getChickenCoops()) {
             while (coop.getChickens().size() < 4 && chickenCount < 15) {
-                coop.add(new Chicken("chciken", "cluck"));
+                coop.addChicken(new Chicken("chciken", "cluck"));
                 chickenCount++;
             }
         }
