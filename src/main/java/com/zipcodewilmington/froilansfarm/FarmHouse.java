@@ -8,8 +8,6 @@ public class FarmHouse {
 
     public FarmHouse() {
         people = new ArrayList<>();
-        people.add(new Farmer("Froilan"));
-        people.add(new Pilot("Froilanda"));
     }
 
     public List<Person> getPeople() {
