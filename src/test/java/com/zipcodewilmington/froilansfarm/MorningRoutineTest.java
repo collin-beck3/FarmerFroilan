@@ -11,22 +11,22 @@ public class MorningRoutineTest {
     @Test
     void testFroilanCanRideEachHorse() {
 
-        Farmer froilan = new Farmer("Froilan");
+        Farmer froilan = new Farmer("Froilan", "Hello, my name is Froilan");
 
         Stable stable1 = new Stable();
         Stable stable2 = new Stable();
         Stable stable3 = new Stable();
 
-        stable1.addHorse(new Horse("Horse1"));
-        stable1.addHorse(new Horse("Horse2"));
-        stable1.addHorse(new Horse("Horse3"));
-        stable2.addHorse(new Horse("Horse4"));
-        stable2.addHorse(new Horse("Horse5"));
-        stable2.addHorse(new Horse("Horse6"));
-        stable3.addHorse(new Horse("Horse7"));
-        stable3.addHorse(new Horse("Horse8"));
-        stable3.addHorse(new Horse("Horse9"));
-        stable3.addHorse(new Horse("Horse10"));
+        stable1.addHorse(new Horse("Horse1", "Neigh"));
+        stable1.addHorse(new Horse("Horse2", "Neigh"));
+        stable1.addHorse(new Horse("Horse3", "Neigh"));
+        stable2.addHorse(new Horse("Horse4", "Neigh"));
+        stable2.addHorse(new Horse("Horse5", "Neigh"));
+        stable2.addHorse(new Horse("Horse6", "Neigh"));
+        stable3.addHorse(new Horse("Horse7", "Neigh"));
+        stable3.addHorse(new Horse("Horse8", "Neigh"));
+        stable3.addHorse(new Horse("Horse9", "Neigh"));
+        stable3.addHorse(new Horse("Horse10", "Neigh"));
 
         List<Horse> horses = new ArrayList<>();
         horses.addAll(stable1.getHorses());
@@ -41,20 +41,20 @@ public class MorningRoutineTest {
     @Test
     void testFroilandaCanRideEachHorse() {
 
-        Pilot froilanda = new Pilot("Froilanda");
+        Pilot froilanda = new Pilot("Froilanda", "Hello, my name is Froilanda");
         Stable stable1 = new Stable();
         Stable stable2 = new Stable();
         Stable stable3 = new Stable();
-        stable1.addHorse(new Horse("Horse1"));
-        stable1.addHorse(new Horse("Horse2"));
-        stable1.addHorse(new Horse("Horse3"));
-        stable2.addHorse(new Horse("Horse4"));
-        stable2.addHorse(new Horse("Horse5"));
-        stable2.addHorse(new Horse("Horse6"));
-        stable3.addHorse(new Horse("Horse7"));
-        stable3.addHorse(new Horse("Horse8"));
-        stable3.addHorse(new Horse("Horse9"));
-        stable3.addHorse(new Horse("Horse10"));
+        stable1.addHorse(new Horse("Horse1", "Neigh"));
+        stable1.addHorse(new Horse("Horse2", "Neigh"));
+        stable1.addHorse(new Horse("Horse3", "Neigh"));
+        stable2.addHorse(new Horse("Horse4", "Neigh"));
+        stable2.addHorse(new Horse("Horse5", "Neigh"));
+        stable2.addHorse(new Horse("Horse6", "Neigh"));
+        stable3.addHorse(new Horse("Horse7", "Neigh"));
+        stable3.addHorse(new Horse("Horse8", "Neigh"));
+        stable3.addHorse(new Horse("Horse9", "Neigh"));
+        stable3.addHorse(new Horse("Horse10", "Neigh"));
 
         List<Horse> horses = new ArrayList<>();
         horses.addAll(stable1.getHorses());
@@ -69,7 +69,7 @@ public class MorningRoutineTest {
     @Test
     void testEachHorseCanEatThreeEarCorn() {
 
-        Horse horse = new Horse("TestHorse");
+        Horse horse = new Horse("TestHorse", "Neigh");
 
         assertDoesNotThrow(() -> {
             horse.eat(new EarCorn());
@@ -81,7 +81,7 @@ public class MorningRoutineTest {
     @Test
     void testFroilanCanEatBreakfast() {
 
-        Farmer froilan = new Farmer("Froilan");
+        Farmer froilan = new Farmer("Froilan", "Hello, my name is Froilan");
 
         assertDoesNotThrow(() -> {
             froilan.eat(new EarCorn());
@@ -97,7 +97,7 @@ public class MorningRoutineTest {
     @Test
     void testFroilandaCanEatBreakfast() {
 
-        Pilot froilanda = new Pilot("Froilanda");
+        Pilot froilanda = new Pilot("Froilanda", "Hello, my name is Froilanda");
 
         assertDoesNotThrow(() -> {
             froilanda.eat(new EarCorn());
