@@ -9,6 +9,4 @@ public class Horse extends Animal implements Rideable{
     public void beMounted(Rider rider) {}
     @Override
     public void beDismounted(Rider rider) {}
-    @Override
-    public String makeNoise() { return sound; }
 }

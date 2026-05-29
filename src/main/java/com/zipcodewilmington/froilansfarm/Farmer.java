@@ -13,6 +13,4 @@ public class Farmer extends Person implements Rider, Botanist{
     public void plant(Crop<?> crop, CropRow row) {
         row.addCrop(crop);
     }
-    @Override
-    public String makeNoise() { return sound; }
 }

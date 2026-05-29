@@ -1,8 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class CropDuster extends FarmVehicle implements Aircraft {
-    protected String name;
-    protected String sound;
 
     public CropDuster(String name, String sound) { super(name, sound); }
 
@@ -18,6 +16,4 @@ public class CropDuster extends FarmVehicle implements Aircraft {
             fertilize(row);
         }
     }
-    @Override
-    public String makeNoise() { return sound; }
 }

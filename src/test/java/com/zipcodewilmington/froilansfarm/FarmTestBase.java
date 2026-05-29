@@ -63,7 +63,7 @@ public abstract class FarmTestBase {
 
         for (ChickenCoop coop : farm.getChickenCoops()) {
             while (coop.getChickens().size() < 4 && chickenCount < 15) {
-                coop.addChicken(new Chicken("chciken", "cluck"));
+                coop.addChicken(new Chicken("chicken", "cluck"));
                 chickenCount++;
             }
         }

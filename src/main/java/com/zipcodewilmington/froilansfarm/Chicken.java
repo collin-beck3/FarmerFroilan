@@ -14,11 +14,9 @@ public class Chicken extends Animal implements Produce<Edible> {
         }
         return null;
     }
-    @Override
-    public String makeNoise() { return sound; }
 
-    public void hasBeenFertilized() {
-        hasBeenFertilized = true;
+    public boolean hasBeenFertilized() {
+       return hasBeenFertilized;
     }
 
     public void setHasBeenFertilized(boolean hasBeenFertilized) {
