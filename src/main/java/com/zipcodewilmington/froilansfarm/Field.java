@@ -13,4 +13,8 @@ public class Field {
     public List<CropRow> getCropRows() {
         return cropRows;
     }
+
+    public void addCropRow(CropRow row) {
+        cropRows.add(row);
+    }
 }
