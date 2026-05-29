@@ -20,4 +20,8 @@ public abstract class Crop<T extends Edible> implements Produce<T> {
         return hasBeenFertilized;
     }
 
+    public void setHasBeenFertilized(boolean hasBeenFertilized) {
+        this.hasBeenFertilized = hasBeenFertilized;
+    }
+
 }

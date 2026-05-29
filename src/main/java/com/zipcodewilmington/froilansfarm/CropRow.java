@@ -21,7 +21,9 @@ public class CropRow {
     }
 
     public void fertilize() {
-        hasBeenFertilized = true;
+        for (Crop crop : crops) {
+            crop.setHasBeenFertilized(true);
+        }
     }
 
     public boolean hasBeenFertilized() {
