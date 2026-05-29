@@ -1,15 +1,18 @@
+package com.zipcodewilmington.froilansfarm;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.zipcodewilmington.froilansfarm.Edible;
-import com.zipcodewilmington.froilansfarm.EdibleEgg;
-import com.zipcodewilmington.froilansfarm.FarmTestBase;
+//import com.zipcodewilmington.froilansfarm.Chicken;
+//import com.zipcodewilmington.froilansfarm.Edible;
+//import com.zipcodewilmington.froilansfarm.EdibleEgg;
+//import com.zipcodewilmington.froilansfarm.FarmTestBase;
 
 public class FridayTest extends FarmTestBase {
 
     @Test
     void unfertilizedChickenYieldsEdibleEgg() {
-        Chicken chicken = new Chicken();
+        Chicken chicken = new Chicken("chicken", "cluck");
 
         chicken.setHasBeenFertilized(false);
 
@@ -20,7 +23,7 @@ public class FridayTest extends FarmTestBase {
 
     @Test
     void fertilizedChickenDoesNotYieldEdibleEgg() {
-        Chicken chicken = new Chicken();
+        Chicken chicken = new Chicken("chicken", "cluck");
 
         chicken.setHasBeenFertilized(true);
 
