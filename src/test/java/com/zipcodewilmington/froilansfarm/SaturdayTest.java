@@ -96,12 +96,12 @@ public class SaturdayTest extends FarmTestBase {
     @Test
     void froilanMakesNoise() {
         assertEquals("Hello, I am Froilan",
-                cropDuster.makeNoise());
+                froilan.makeNoise());
     }
     
     @Test
     void froilandaMakesNoise() {
         assertEquals("Hello, I am Froilanda",
-                cropDuster.makeNoise());
+                froilanda.makeNoise());
     }
 }

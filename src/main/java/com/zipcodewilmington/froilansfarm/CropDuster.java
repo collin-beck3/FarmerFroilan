@@ -16,6 +16,4 @@ public class CropDuster extends FarmVehicle implements Aircraft {
             fertilize(row);
         }
     }
-    @Override
-    public String makeNoise() { return sound; }
 }
