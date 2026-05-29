@@ -15,8 +15,8 @@ public class Chicken extends Animal implements Produce<Edible> {
         return null;
     }
 
-    public void hasBeenFertilized() {
-        hasBeenFertilized = true;
+    public boolean hasBeenFertilized() {
+       return hasBeenFertilized;
     }
 
     public void setHasBeenFertilized(boolean hasBeenFertilized) {

@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
@@ -104,4 +105,37 @@ public class SaturdayTest extends FarmTestBase {
         assertEquals("Hello, I am Froilanda",
                 froilanda.makeNoise());
     }
+
+    @Test
+    void pilotCanMountAndDismountHorse() {
+        Horse horse = farm.getStables().get(0).getHorses().get(0);
+
+        assertDoesNotThrow(() -> {
+            froilanda.mount(horse);
+            froilanda.dismount(horse);
+        });
+    }
+
+    @Test
+    void farmStartsWithCorrectNumberOfPeople() {
+        int peopleCount = farm.getFarmHouse().getPeople().size();
+        assertEquals(2, peopleCount);
+    }
+
+    @Test
+    void chickenStartsUnfertilized() {
+        Chicken chicken = farm.getChickenCoops().get(0).getChickens().get(0);
+
+        assertFalse(chicken.hasBeenFertilized());
+    }
+
+    @Test
+    void chickenCanBeFertilized() {
+        Chicken chicken = farm.getChickenCoops().get(0).getChickens().get(0);
+
+        chicken.setHasBeenFertilized(true);
+
+        assertTrue(chicken.hasBeenFertilized());
+    }
+
 }
