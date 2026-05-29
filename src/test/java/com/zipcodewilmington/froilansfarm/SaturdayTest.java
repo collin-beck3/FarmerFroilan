@@ -50,6 +50,7 @@ public class SaturdayTest extends FarmTestBase {
 
     @Test
     void horseCanBeMountedAndDismounted() {
+        Horse horse = farm.getStables().get(0).getHorses().get(0);
         assertDoesNotThrow(() -> horse.beMounted(froilan));
         assertDoesNotThrow(() -> horse.beDismounted(froilan));
     }
@@ -64,5 +65,43 @@ public class SaturdayTest extends FarmTestBase {
     void cropDusterCanBeMountedAndDismounted() {
         assertDoesNotThrow(() -> cropDuster.beMounted(froilanda));
         assertDoesNotThrow(() -> cropDuster.beDismounted(froilanda));
+    }
+
+    @Test
+    void horseMakesNoise() {
+        Horse horse = farm.getStables().get(0).getHorses().get(0);
+
+        assertEquals("Neigh", horse.makeNoise());
+    }
+    
+    @Test
+    void chickenMakesNoise() {
+        Chicken chicken = farm.getChickenCoops().get(0).getChickens().get(0);
+
+        assertEquals("cluck", chicken.makeNoise());
+    }
+    
+    @Test
+    void tractorMakesNoise() {
+        assertEquals("vroom",
+                tractor.makeNoise());
+    }
+    
+    @Test
+    void cropDusterMakesNoise() {
+        assertEquals("whooosh",
+                cropDuster.makeNoise());
+    }
+    
+    @Test
+    void froilanMakesNoise() {
+        assertEquals("Hello, I am Froilan",
+                cropDuster.makeNoise());
+    }
+    
+    @Test
+    void froilandaMakesNoise() {
+        assertEquals("Hello, I am Froilanda",
+                cropDuster.makeNoise());
     }
 }
