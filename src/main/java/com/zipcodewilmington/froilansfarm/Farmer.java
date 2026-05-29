@@ -1,8 +1,8 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class Farmer extends Person implements Rider, Botanist{
-    public Farmer(String name) {
-        super(name);
+    public Farmer(String name, String sound) {
+        super(name, sound);
     }
 
     @Override
@@ -13,4 +13,6 @@ public class Farmer extends Person implements Rider, Botanist{
     public void plant(Crop<?> crop, CropRow row) {
         row.addCrop(crop);
     }
+    @Override
+    public String makeNoise() { return sound; }
 }
