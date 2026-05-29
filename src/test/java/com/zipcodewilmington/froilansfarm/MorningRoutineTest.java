@@ -11,7 +11,7 @@ public class MorningRoutineTest {
     @Test
     void testFroilanCanRideEachHorse() {
 
-        Farmer froilan = new Farmer("Froilan", "Hello, my name is Froilan");
+        Farmer froilan = new Farmer("Froilan", "Hello, I am Froilan");
 
         Stable stable1 = new Stable();
         Stable stable2 = new Stable();
@@ -41,7 +41,7 @@ public class MorningRoutineTest {
     @Test
     void testFroilandaCanRideEachHorse() {
 
-        Pilot froilanda = new Pilot("Froilanda", "Hello, my name is Froilanda");
+        Pilot froilanda = new Pilot("Froilanda", "Hello, I am Froilanda");
         Stable stable1 = new Stable();
         Stable stable2 = new Stable();
         Stable stable3 = new Stable();
@@ -81,7 +81,7 @@ public class MorningRoutineTest {
     @Test
     void testFroilanCanEatBreakfast() {
 
-        Farmer froilan = new Farmer("Froilan", "Hello, my name is Froilan");
+        Farmer froilan = new Farmer("Froilan", "Hello, I am Froilan");
 
         assertDoesNotThrow(() -> {
             froilan.eat(new EarCorn());
@@ -97,7 +97,7 @@ public class MorningRoutineTest {
     @Test
     void testFroilandaCanEatBreakfast() {
 
-        Pilot froilanda = new Pilot("Froilanda", "Hello, my name is Froilanda");
+        Pilot froilanda = new Pilot("Froilanda", "Hello, I am Froilanda");
 
         assertDoesNotThrow(() -> {
             froilanda.eat(new EarCorn());
