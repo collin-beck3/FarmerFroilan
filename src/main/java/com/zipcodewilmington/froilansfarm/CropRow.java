@@ -5,9 +5,11 @@ import java.util.List;
 
 public class CropRow {
     private List<Crop<?>> crops;
+    private boolean hasBeenFertilized;
 
     public CropRow() {
         crops = new ArrayList<>();
+        hasBeenFertilized = false;
     }
 
     public void addCrop(Crop<?> crop) {
@@ -18,5 +20,11 @@ public class CropRow {
         return crops;
     }
 
-    
+    public void fertilize() {
+        hasBeenFertilized = true;
+    }
+
+    public boolean hasBeenFertilized() {
+        return hasBeenFertilized;
+    }
 }
