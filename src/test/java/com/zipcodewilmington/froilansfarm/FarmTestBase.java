@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 public abstract class FarmTestBase {
 
     protected Farm farm;
+    protected Field field;
+    protected FarmHouse farmHouse;
     protected Farmer froilan;
     protected Pilot froilanda;
     protected Tractor tractor;
@@ -14,28 +16,27 @@ public abstract class FarmTestBase {
     void setUp() {
         farm = new Farm();
 
-        froilan = new Farmer("Froilan");
-        froilanda = new Pilot("Froilanda");
+        froilan = new Farmer();
+        froilanda = new Pilot();
 
         tractor = new Tractor();
         cropDuster = new CropDuster();
 
-        farm.setFarmHouse(new FarmHouse());
         farm.getFarmHouse().addPerson(froilan);
         farm.getFarmHouse().addPerson(froilanda);
 
         farm.setField(new Field());
 
         for (int i = 0; i < 5; i++) {
-            farm.getField().addCropRow(new CropRow<>());
+            farm.getField().addCropRow(new CropRow());
         }
 
         for (int i = 0; i < 3; i++) {
-            farm.addStable(new Stable<>());
+            farm.addStable(new Stable());
         }
 
         for (int i = 0; i < 4; i++) {
-            farm.addChickenCoop(new ChickenCoop<>());
+            farm.addChickenCoop(new ChickenCoop());
         }
 
         addHorses();
