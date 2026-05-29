@@ -5,6 +5,8 @@ public class Horse extends Animal implements Rideable{
         super(name);
     }
 
+    @Override
     public void beMounted(Rider rider) {}
+    @Override
     public void beDismounted(Rider rider) {}
 }
