@@ -8,10 +8,6 @@ public class Field {
 
     public Field() {
         cropRows = new ArrayList<>();
-
-        for (int i = 0; i < 5; i++) {
-            cropRows.add(new CropRow());
-        }
     }
 
     public List<CropRow> getCropRows() {
