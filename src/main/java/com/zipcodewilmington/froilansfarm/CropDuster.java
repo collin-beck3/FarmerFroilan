@@ -1,9 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class CropDuster extends FarmVehicle implements Aircraft {
-    public CropDuster(String name) {
-        super(name);
-    }
 
     public void fertilize(CropRow row) {}
 

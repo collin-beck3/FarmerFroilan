@@ -1,11 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
 public abstract class Vehicle implements Rideable, NoiseMaker {
-    protected String name;
-
-    public Vehicle(String name) {
-        this.name = name;
-    }
 
     @Override
     public void beMounted(Rider rider) {}
