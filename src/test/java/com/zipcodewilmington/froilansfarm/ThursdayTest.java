@@ -1,10 +1,8 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.EarCorn;
-import com.zipcodewilmington.froilansfarm.EdibleEgg;
-import com.zipcodewilmington.froilansfarm.FarmTestBase;
-import com.zipcodewilmington.froilansfarm.Tomato;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 public class ThursdayTest extends FarmTestBase {
 

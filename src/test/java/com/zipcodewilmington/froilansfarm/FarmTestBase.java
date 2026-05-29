@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 public abstract class FarmTestBase {
 
     protected Farm farm;
+    protected Field field;
+    protected FarmHouse farmHouse;
     protected Farmer froilan;
     protected Pilot froilanda;
     protected Tractor tractor;
@@ -14,28 +16,28 @@ public abstract class FarmTestBase {
     void setUp() {
         farm = new Farm();
 
-        froilan = new Farmer("Froilan");
-        froilanda = new Pilot("Froilanda");
+        froilan = new Farmer("Froilan", "Hello, my name is Froilan");
+        froilanda = new Pilot("Froilanda", "Hello, my name is Froilanda");
 
-        tractor = new Tractor();
-        cropDuster = new CropDuster();
+        tractor = new Tractor("Tractor", "vroom");
+        cropDuster = new CropDuster("CropDuster", "whooosh");
 
-        farm.setFarmHouse(new FarmHouse());
+        farmHouse = new FarmHouse();
         farm.getFarmHouse().addPerson(froilan);
         farm.getFarmHouse().addPerson(froilanda);
 
-        farm.setField(new Field());
+        field =new Field();
 
         for (int i = 0; i < 5; i++) {
-            farm.getField().addCropRow(new CropRow<>());
+            farm.getField().addCropRow(new CropRow());
         }
 
         for (int i = 0; i < 3; i++) {
-            farm.addStable(new Stable<>());
+            farm.addStable(new Stable());
         }
 
         for (int i = 0; i < 4; i++) {
-            farm.addChickenCoop(new ChickenCoop<>());
+            farm.addChickenCoop(new ChickenCoop());
         }
 
         addHorses();
@@ -50,7 +52,7 @@ public abstract class FarmTestBase {
 
         for (Stable stable : farm.getStables()) {
             while (stable.getHorses().size() < 4 && horseCount < 10) {
-                stable.add(new Horse());
+                stable.add(new Horse("horse", "Neigh"));
                 horseCount++;
             }
         }
@@ -61,7 +63,7 @@ public abstract class FarmTestBase {
 
         for (ChickenCoop coop : farm.getChickenCoops()) {
             while (coop.getChickens().size() < 4 && chickenCount < 15) {
-                coop.add(new Chicken());
+                coop.add(new Chicken("chciken", "cluck"));
                 chickenCount++;
             }
         }

@@ -1,10 +1,13 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.EarCorn;
-import com.zipcodewilmington.froilansfarm.FarmTestBase;
-import com.zipcodewilmington.froilansfarm.Horse;
-import com.zipcodewilmington.froilansfarm.Stable;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
+//import com.zipcodewilmington.froilansfarm.EarCorn;
+//import com.zipcodewilmington.froilansfarm.FarmTestBase;
+//import com.zipcodewilmington.froilansfarm.Horse;
+//import com.zipcodewilmington.froilansfarm.Stable;
 
 public class WednesdayTest extends FarmTestBase {
 
@@ -20,7 +23,7 @@ public class WednesdayTest extends FarmTestBase {
 
     @Test
     void horseCanEatCorn() {
-        Horse horse = new Horse();
+        Horse horse = new Horse("horse", "Neigh");
         EarCorn corn = new EarCorn();
 
         assertDoesNotThrow(() -> horse.eat(corn));
@@ -28,7 +31,7 @@ public class WednesdayTest extends FarmTestBase {
 
     @Test
     void horseMakesNoise() {
-        Horse horse = new Horse();
+        Horse horse = new Horse("horse", "Neigh");
 
         assertEquals("Neigh", horse.makeNoise());
     }

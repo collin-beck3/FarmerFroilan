@@ -1,9 +1,9 @@
+package com.zipcodewilmington.froilansfarm;
+
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Test;
-
-import com.zipcodewilmington.froilansfarm.FarmTestBase;
 
 public class SaturdayTest extends FarmTestBase {
 
