@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
@@ -131,6 +132,48 @@ public class SaturdayTest extends FarmTestBase {
         Chicken chicken = farm.getChickenCoops().get(0).getChickens().get(0);
         chicken.setHasBeenFertilized(true);
         assertTrue(chicken.hasBeenFertilized());
+    }
+
+    @Test
+    void genericCropRowStartsEmpty() {
+        CropRow row = new CropRow();
+        assertEquals(0, row.getCrops().size());
+    }
+
+    @Test
+    void genericCropRowIsNotEmptyAfterAddingMixedCrops() {
+        CropRow row = new CropRow();
+        row.addCrop(new CornStalk());
+        row.addCrop(new TomatoPlant());
+        row.addCrop(new LettucePlant());
+        assertFalse(row.getCrops().isEmpty());
+    }
+
+    @Test
+    void genericProduceYieldDoesNotReturnNull() {
+        Produce<EarCorn> cornProducer = new CornStalk();
+        Produce<Tomato> tomatoProducer = new TomatoPlant();
+        Produce<Lettuce> lettuceProducer = new LettucePlant();
+        assertNotNull(cornProducer.yield());
+        assertNotNull(tomatoProducer.yield());
+        assertNotNull(lettuceProducer.yield());
+    }
+
+    @Test
+    void differentGenericYieldsAreNotSameClass() {
+        Produce<EarCorn> cornProducer = new CornStalk();
+        Produce<Tomato> tomatoProducer = new TomatoPlant();
+        assertNotEquals(cornProducer.yield().getClass(), tomatoProducer.yield().getClass());
+    }
+
+    @Test
+    void wildcardCropReferencesDoNotThrowWhenYielding() {
+        Crop<?> corn = new CornStalk();
+        Crop<?> tomato = new TomatoPlant();
+        Crop<?> lettuce = new LettucePlant();
+        assertDoesNotThrow(() -> corn.yield());
+        assertDoesNotThrow(() -> tomato.yield());
+        assertDoesNotThrow(() -> lettuce.yield());
     }
 
 }
